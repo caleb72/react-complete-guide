@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -25,9 +26,13 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    alert(expense.title);
+  };
+
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
